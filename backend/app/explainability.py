@@ -17,3 +17,11 @@ FEATURE_LABELS = {
     "merchant_risk":
         "Higher-risk merchant category",
 }
+
+def explain_transaction(
+        features,
+        model,
+        top_n=3
+
+):
+    
