@@ -33,17 +33,11 @@ class PredictionResponse(BaseModel):
     transaction_id: str
     fraud_probability: float
     risk_score: float
-
     risk_level: str
-
     decision: str
-
     model_version: str
-
     inference_time_ms: float
-
     timestamp: datetime
-
     top_risk_factors: List[str]
 
 
