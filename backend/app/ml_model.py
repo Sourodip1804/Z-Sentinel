@@ -105,4 +105,4 @@ def train_model():
     return model
 
 
-    
+MODEL = train_model()
