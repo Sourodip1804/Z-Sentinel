@@ -162,4 +162,23 @@ def sav_transaction(db: Session, payload:TransactionInput, result: dict):
         timestamp=
             result["timestamp"]
     )
+    db.add(row)
+    db.commit()
+    db.refresh(row)
+    return row
+
+
+# for the health point 
+@app.get("/api/health")
+def health():
+
+    return {
+
+        "status": "online",
+
+        "service": "Z-Sentinel",
+
+        "model_version":
+            MODEL_VERSION
+    }
 
