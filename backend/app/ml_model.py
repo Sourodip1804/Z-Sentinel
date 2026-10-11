@@ -1,3 +1,7 @@
+# this is for training the data of the model for the use in the fraud model 
+
+
+
 import numpy as np
 import pandas as pd
 
