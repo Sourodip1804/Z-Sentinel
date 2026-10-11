@@ -12,3 +12,9 @@ def built_training_data(n=10000, seed=42):
         sigma=1.0,
         size=n
     )
+
+    amount = np.clip(
+        amount,
+        10,
+        100000
+    )
