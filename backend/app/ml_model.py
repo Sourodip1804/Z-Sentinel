@@ -126,3 +126,9 @@ def category_to_risk(category: str) -> float:
 
         "other": 0.30,
     }
+
+    return risk_map.get(
+        category.lower(),
+        0.30
+
+    )
