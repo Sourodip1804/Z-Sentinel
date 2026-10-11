@@ -51,3 +51,12 @@ def generate_transaction():
             1
         ])
     )
+
+def transaction_id():
+
+    return (
+        "TXN-"
+        + uuid.uuid4()
+        .hex[:10]
+        .upper()
+    )
