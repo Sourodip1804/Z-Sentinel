@@ -40,19 +40,13 @@ class PredictionResponse(BaseModel):
     timestamp: datetime
     top_risk_factors: List[str]
 
-
+# for the transaction response 
 class TransactionResponse(PredictionResponse):
-
     amount: float
-
     merchant_category: str
-
     device_novelty: float
-
     location_deviation: float
-
     transaction_velocity: float
-
     unusual_time: float
 
 
