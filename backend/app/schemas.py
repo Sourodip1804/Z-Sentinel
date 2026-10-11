@@ -1,15 +1,10 @@
 from datetime import datetime
 from typing import List
-
 from pydantic import BaseModel, Field
 
-
 class TransactionInput(BaseModel):
-
     amount: float = Field(gt=0)
-
     merchant_category: str = "other"
-
     device_novelty: float = Field(
         default=0,
         ge=0,
