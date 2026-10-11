@@ -172,4 +172,3 @@ def predict(transaction):
     )
     return probability, features
 
-MODEL.predict_proba(features)
