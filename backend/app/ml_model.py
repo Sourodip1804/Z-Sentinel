@@ -106,3 +106,23 @@ def train_model():
 
 
 MODEL = train_model()
+
+
+# for the merchant risk category 
+
+def category_to_risk(category: str) -> float:
+    risk_map = {
+        "grocery": 0.10,
+
+        "electronics": 0.55,
+
+        "travel": 0.50,
+
+        "restaurant": 0.20,
+
+        "fuel": 0.15,
+
+        "online": 0.65,
+
+        "other": 0.30,
+    }
