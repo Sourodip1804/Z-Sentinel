@@ -73,3 +73,7 @@ app.add_middleware(
 )
 
 
+# now the core prediction model 
+
+
+
