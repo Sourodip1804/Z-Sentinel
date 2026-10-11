@@ -132,3 +132,30 @@ def category_to_risk(category: str) -> float:
         0.30
 
     )
+
+# for praparing the transaction 
+
+def prepare_features(transaction):
+
+    return pd.DataFrame([
+        {
+            "amount": transaction.amount,
+
+            "device_novelty":
+                transaction.device_novelty,
+
+            "location_deviation":
+                transaction.location_deviation,
+
+            "transaction_velocity":
+                transaction.transaction_velocity,
+
+            "unusual_time":
+                transaction.unusual_time,
+
+            "merchant_risk":
+                category_to_risk(
+                    transaction.merchant_category
+                ),
+        }
+    ])
