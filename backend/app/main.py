@@ -114,3 +114,52 @@ def run_prediction(payload:TransactionInput):
     
     }
 
+# for saving the transaction 
+
+def sav_transaction(db: Session, payload:TransactionInput, result: dict):
+    row = Transaction(
+        transaction_id=
+            result["transaction_id"],
+
+        amount=payload.amount,
+
+        merchant_category=
+            payload.merchant_category,
+
+        device_novelty=
+            payload.device_novelty,
+
+        location_deviation=
+            payload.location_deviation,
+
+        transaction_velocity=
+            payload.transaction_velocity,
+
+        unusual_time=
+            payload.unusual_time,
+
+        fraud_probability=
+            result["fraud_probability"],
+
+        risk_score=
+            result["risk_score"],
+
+        risk_level=
+            result["risk_level"],
+
+        decision=
+            result["decision"],
+
+        top_risk_factors=
+            result["top_risk_factors"],
+
+        model_version=
+            result["model_version"],
+
+        inference_time_ms=
+            result["inference_time_ms"],
+
+        timestamp=
+            result["timestamp"]
+    )
+
