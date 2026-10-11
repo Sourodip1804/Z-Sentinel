@@ -75,5 +75,42 @@ app.add_middleware(
 
 # now the core prediction model 
 
+def run_prediction(payload:TransactionInput):
+    start = time.perf_counter()
+    probability, features = predict(payload)
+    risk_score, risk_level, decision = (calculate_risk(probability))
+    factors = explain_transaction(features, MODEL)
+    elapsed_ms = round((time.perf_counter() - start)*1000,2)
+    return{
+        "transaction_id":
+            transaction_id(),
 
+        "fraud_probability":
+            round(
+                probability,
+                6
+            ),
+
+        "risk_score":
+            risk_score,
+
+        "risk_level":
+            risk_level,
+
+        "decision":
+            decision,
+
+        "model_version":
+            MODEL_VERSION,
+
+        "inference_time_ms":
+            elapsed_ms,
+
+        "timestamp":
+            datetime.utcnow(),
+
+        "top_risk_factors":
+            factors
+    
+    }
 
