@@ -171,13 +171,9 @@ def sav_transaction(db: Session, payload:TransactionInput, result: dict):
 # for the health point 
 @app.get("/api/health")
 def health():
-
     return {
-
         "status": "online",
-
         "service": "Z-Sentinel",
-
         "model_version":
             MODEL_VERSION
     }
