@@ -11,3 +11,9 @@ engine = create_engine(
         "check_same_thread": False
     }
 )
+
+SessionLocal = sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine
+)
