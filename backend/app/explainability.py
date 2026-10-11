@@ -37,7 +37,6 @@ def explain_transaction(
     )
 
     active = features.iloc[0]
-
     factors = []
 
     for feature, importance in pairs:
