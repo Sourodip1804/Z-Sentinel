@@ -49,3 +49,5 @@ from .simulator import (
     generate_transaction,
     transaction_id
 )
+
+Base.metadata.create_all(bind=engine)
