@@ -161,13 +161,15 @@ def prepare_features(transaction):
     ])
 
     # for making the prediction model     
-    def predict(transaction):
-        features = prepare_features(
-            transaction
-        )
-        probability = float(
-            MODEL.predict_proba(
-                features
-            )[0][1]
-        )
-        return probability, features
+def predict(transaction):
+    features = prepare_features(
+        transaction
+    )
+    probability = float(
+        MODEL.predict_proba(
+            features
+        )[0][1]
+    )
+    return probability, features
+
+
