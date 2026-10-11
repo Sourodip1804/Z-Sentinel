@@ -51,3 +51,12 @@ from .simulator import (
 )
 
 Base.metadata.create_all(bind=engine)
+
+# creating the fastapi
+app = FastAPI(
+    title="Z-Sentinel API",
+    description= "Real-Time AI Fraud Risk & Decision Engine"
+
+)
+
+
