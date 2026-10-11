@@ -62,14 +62,14 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origin=[
+    allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173"
 
-    ]
+    ],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
 
 
@@ -107,7 +107,7 @@ def run_prediction(payload:TransactionInput):
             elapsed_ms,
 
         "timestamp":
-            datetime.utcnow(),
+            datetime.datetime.utcnow(),
 
         "top_risk_factors":
             factors
