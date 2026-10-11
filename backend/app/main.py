@@ -10,3 +10,6 @@ from fastapi import(
     
 )
 
+from fastapi.middleware.cors import(
+    CORSMiddleware
+)
