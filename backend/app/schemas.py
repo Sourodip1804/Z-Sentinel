@@ -51,17 +51,10 @@ class TransactionResponse(PredictionResponse):
 
 
 class StatsResponse(BaseModel):
-
     total_transactions: int
-
     high_risk_transactions: int
-
     fraud_predictions: int
-
     approved: int
-
     review: int
-
     blocked: int
-
     average_inference_ms: float
