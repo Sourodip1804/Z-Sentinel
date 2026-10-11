@@ -28,13 +28,10 @@ class TransactionInput(BaseModel):
         le=1
     )
 
-
+# for the prediction model 
 class PredictionResponse(BaseModel):
-
     transaction_id: str
-
     fraud_probability: float
-
     risk_score: float
 
     risk_level: str
