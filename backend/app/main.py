@@ -271,3 +271,11 @@ def stats(
     db: Session = Depends(get_db)
 ):
     rows = (db.query(Transaction).all())
+    total =len(rows)
+    high = sum(
+        row.risk_level == "HIGH"
+        for row in rows
+
+    )
+
+    
