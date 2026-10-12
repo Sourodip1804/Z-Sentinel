@@ -233,3 +233,34 @@ def simulate_transaction(
     )
 
     return row_to_response(row)
+
+
+# for the transaction endpoint 
+
+@app.get(
+    "/api/transactions",
+    response_model=list[TransactionResponse]
+)
+def transactions(
+    limit: int = 50,
+    db: Session = Depends(get_db)
+):
+
+    rows = (
+        db.query(Transaction)
+        .order_by(
+            Transaction.timestamp.desc()
+        )
+        .limit(
+            min(
+                max(limit, 1),
+                200
+            )
+        )
+        .all()
+    )
+
+    return [
+        row_to_response(row)
+        for row in rows
+    ]
