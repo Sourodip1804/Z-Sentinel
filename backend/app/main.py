@@ -262,3 +262,6 @@ def transactions(
         row_to_response(row)
         for row in rows
     ]
+
+# for the statistics endpoint 
+
