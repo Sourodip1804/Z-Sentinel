@@ -116,7 +116,7 @@ def run_prediction(payload:TransactionInput):
 
 # for saving the transaction 
 
-def sav_transaction(db: Session, payload:TransactionInput, result: dict):
+def save_transaction(db: Session, payload:TransactionInput, result: dict):
     row = Transaction(
         transaction_id=
             result["transaction_id"],
@@ -191,6 +191,26 @@ def predict_transaction(
     result = run_prediction(payload)
     save_transaction(db, payload, result)
     return result 
+
+def row_to_response(row: Transaction) -> dict:
+    return {
+        "transaction_id": row.transaction_id,
+        "amount": row.amount,
+        "merchant_category": row.merchant_category,
+        "device_novelty": row.device_novelty,
+        "location_deviation": row.location_deviation,
+        "transaction_velocity": row.transaction_velocity,
+        "unusual_time": row.unusual_time,
+        "fraud_probability": row.fraud_probability,
+        "risk_score": row.risk_score,
+        "risk_level": row.risk_level,
+        "decision": row.decision,
+        "top_risk_factors": row.top_risk_factors,
+        "model_version": row.model_version,
+        "inference_time_ms": row.inference_time_ms,
+        "timestamp": row.timestamp,
+    }
+
 
 # for the simulator endpoint
 @app.post(
