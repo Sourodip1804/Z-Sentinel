@@ -192,3 +192,4 @@ def predict_transaction(
     save_transaction(db, payload, result)
     return result 
 
+# for the simulator endpoint
