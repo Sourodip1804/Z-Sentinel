@@ -188,5 +188,7 @@ def predict_transaction(
     db: Session = Depends(get_db)
 
 ):
-    result 
+    result = run_prediction(payload)
+    save_transaction(db, payload, result)
+    return result 
 
