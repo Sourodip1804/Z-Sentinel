@@ -193,3 +193,23 @@ def predict_transaction(
     return result 
 
 # for the simulator endpoint
+@app.post(
+    "/api/transactions/simulate",
+    response_model=TransactionResponse
+)
+def simulate_transaction(
+    db: Session = Depends(get_db)
+):
+
+    payload = generate_transaction()
+    result = run_prediction(
+        payload
+    )
+
+    row = save_transaction(
+        db,
+        payload,
+        result
+    )
+
+    return row_to_response(row)
