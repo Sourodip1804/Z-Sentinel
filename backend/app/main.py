@@ -311,17 +311,11 @@ def stats(
     return {
 
         "total_transactions": total,
-
         "high_risk_transactions": high,
-
         "fraud_predictions": fraud,
-
         "approved": approved,
-
         "review": review,
-
         "blocked": blocked,
-
         "average_inference_ms":
             avg_latency
     }
