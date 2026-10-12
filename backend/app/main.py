@@ -266,3 +266,8 @@ def transactions(
 # for the statistics endpoint 
 
 @app.get("/api/stats", response_model=StatsResponse)
+
+def stats(
+    db: Session = Depends(get_db)
+):
+    rows = (db.query(Transaction).all())
