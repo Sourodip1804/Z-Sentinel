@@ -275,7 +275,55 @@ def stats(
     high = sum(
         row.risk_level == "HIGH"
         for row in rows
-
+    )
+    fraud = sum(
+        row.fraud_probability >= 0.5
+        for row in rows
     )
 
-    
+    approved = sum(
+        row.decision == "APPROVE"
+        for row in rows
+    )
+
+    review = sum(
+        row.decision == "REVIEW"
+        for row in rows
+    )
+
+    blocked = sum(
+        row.decision == "BLOCK"
+        for row in rows
+    )
+
+    avg_latency = (
+        round(
+            sum(
+                row.inference_time_ms
+                for row in rows
+            ) / total,
+            2
+        )
+        if total
+        else 0
+    )
+
+    return {
+
+        "total_transactions": total,
+
+        "high_risk_transactions": high,
+
+        "fraud_predictions": fraud,
+
+        "approved": approved,
+
+        "review": review,
+
+        "blocked": blocked,
+
+        "average_inference_ms":
+            avg_latency
+    }
+
+
