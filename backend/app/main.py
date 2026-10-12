@@ -245,7 +245,6 @@ def transactions(
     limit: int = 50,
     db: Session = Depends(get_db)
 ):
-
     rows = (
         db.query(Transaction)
         .order_by(
@@ -259,7 +258,6 @@ def transactions(
         )
         .all()
     )
-
     return [
         row_to_response(row)
         for row in rows
