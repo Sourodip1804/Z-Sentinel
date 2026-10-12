@@ -178,3 +178,15 @@ def health():
             MODEL_VERSION
     }
 
+
+# prediction model end point
+
+@app.post("/api/predict", response_model=PredictionResponse)
+
+def predict_transaction(
+    payload:TransactionInput,
+    db: Session = Depends(get_db)
+
+):
+    result 
+
