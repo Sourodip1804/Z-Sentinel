@@ -265,3 +265,4 @@ def transactions(
 
 # for the statistics endpoint 
 
+@app.get("/api/stats", response_model=StatsResponse)
