@@ -61,3 +61,13 @@ async function simulate(){
   }
 
 }
+
+
+// for the custom prediction engine
+async function predict(payload){
+  setLoading(true)
+  try{
+    const response = await predictTransaction(payload)
+    
+  }
+}
