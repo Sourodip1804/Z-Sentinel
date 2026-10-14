@@ -37,7 +37,7 @@ async function refresh(){
   }
 }
 
-// for the refresh of the data 
+// for the refresh of the data for every 4 seconds
 
 useEffect(()=>{
   refresh();
