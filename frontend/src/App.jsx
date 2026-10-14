@@ -73,6 +73,6 @@ async function predict(payload){
 
   }
   finally{
-    setLoading(false)
+    setLoading(false);
   }
 }
