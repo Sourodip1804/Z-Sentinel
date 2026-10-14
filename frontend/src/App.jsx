@@ -46,3 +46,15 @@ useEffect(()=>{
     clearInterval(timer)
   }
 },[]);
+
+// for the simulate the transaction 
+
+async function simulate(){
+  setLoading(true);
+  try{
+    const response= await simulateTransaction()
+    setLastResult(response.data)
+    await refresh()
+  }
+
+}
