@@ -36,3 +36,11 @@ async function refresh(){
         setOnline(false);
   }
 }
+
+useEffect(()=>{
+  refresh();
+  const timer = setInterval(refresh, 4000)
+  return()=>{
+    clearInterval(timer)
+  }
+},[]);
