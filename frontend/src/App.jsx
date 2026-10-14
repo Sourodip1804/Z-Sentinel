@@ -56,5 +56,8 @@ async function simulate(){
     setLastResult(response.data)
     await refresh()
   }
+  finally{
+    setLoading(false)
+  }
 
 }
