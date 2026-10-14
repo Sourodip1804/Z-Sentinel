@@ -37,6 +37,8 @@ async function refresh(){
   }
 }
 
+// for the refresh of the data 
+
 useEffect(()=>{
   refresh();
   const timer = setInterval(refresh, 4000)
