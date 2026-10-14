@@ -11,20 +11,14 @@ const [form, setForm] = useState({
 })
 
 onPredict({
-
     ...form,
-
     amount: Number(form.amount),
-
     device_novelty:
         Number(form.device_novelty),
-
     location_deviation:
         Number(form.location_deviation),
-
     transaction_velocity:
         Number(form.transaction_velocity),
-
     unusual_time:
         Number(form.unusual_time)
 
