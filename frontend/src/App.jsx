@@ -33,7 +33,6 @@ async function refresh(){
     }
 
     catch (error) {
-
         setOnline(false);
   }
 }
