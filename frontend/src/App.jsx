@@ -7,3 +7,6 @@ const [transactions, setTransactions] = useState([])
 const [online, setOnline] = useState(false)
 const [loading, setLoading] = useState(false)
 const [lastResult, setLastResult] = useState(null)
+
+
+// making function for the refresh
