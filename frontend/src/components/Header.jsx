@@ -8,6 +8,17 @@ export default function Header({ online, onSimulate, loading }) {
           <p>Real-Time AI Fraud Risk & Decision Engine</p>
         </div>
       </div>
+      <div className="header-actions">
+        <span className={online ? "status online" : "status offline"}>
+          <span className="dot" />
+
+          {online ? "SYSTEM ONLINE" : "BACKEND OFFLINE"}
+        </span>
+
+        <button className="primary-btn" onClick={onSimulate} disabled={loading}>
+          {loading ? "ANALYZING..." : "⚡ Simulate Transaction"}
+        </button>
+      </div>
     </header>
   );
 }
