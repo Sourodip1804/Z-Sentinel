@@ -11,3 +11,29 @@ const [lastResult, setLastResult] = useState(null)
 
 // making function for the refresh
 
+async function refresh(){
+  try{
+    const[statsRes, txRes, riskRes] = await Promise.all([getStats(),getTransactions(),getRisk()
+    ]);
+
+    setStats(
+            statsRes.data
+        );
+
+        setTransactions(
+            txRes.data
+        );
+
+        setRisk(
+            riskRes.data
+        );
+
+        setOnline(true);
+
+    }
+
+    catch (error) {
+
+        setOnline(false);
+  }
+}
