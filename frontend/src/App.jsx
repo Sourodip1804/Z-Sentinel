@@ -68,6 +68,11 @@ async function predict(payload){
   setLoading(true)
   try{
     const response = await predictTransaction(payload)
-    
+    setLastResult(response.data)
+    await refresh()
+
+  }
+  finally{
+    setLoading(false)
   }
 }
