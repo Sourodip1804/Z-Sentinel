@@ -9,6 +9,12 @@ export default function StatCard({title, value, hint, icon}){
                     {title}
                 </span>
             </div>
+            <strong>
+                {value}
+            </strong>
+            <small>
+                {hint}
+            </small>
         </div>
     )
 }
