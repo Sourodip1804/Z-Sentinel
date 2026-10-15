@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import {getStats, getTransactions, getRisk, simulateTransaction, predictTransaction} from "./api"
+import Header from "./components/Header"
+import StatCard from "./components/StatCard"
+import TransactionForm from "./components/TransactionForm"
 
 const [stats, setStats] = useState(null)
 const [risk, setRisk] = useState(null)
@@ -76,3 +79,42 @@ async function predict(payload){
     setLoading(false);
   }
 }
+
+<Header
+  online={online}
+  onSimulate={simulate}
+  loading={loading}
+/>
+
+<StatCard
+  title="Total transactions"
+  value={stats?.total_transaction ?? 0}
+/>
+
+<StatCard
+  title="High-risk"
+  value={stats?.high_risk_transaction ?? 0}
+/>
+
+<StatCard
+    title="Approved"
+    value={stats?.approved ?? 0}
+/>
+
+<StatCard
+    title="Blocked"
+    value={stats?.blocked ?? 0}
+/>
+
+<TransactionForm
+    onPredict={predict}
+    loading={loading}
+/>
+
+<RiskChart
+    risk={risk}
+/>
+
+<TransactionTable
+    transactions={transactions}
+/>
