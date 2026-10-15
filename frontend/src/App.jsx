@@ -118,3 +118,27 @@ async function predict(payload){
 <TransactionTable
     transactions={transactions}
 />
+
+
+import {
+    ResponsiveContainer,PieChart,Pie,Cell,Tooltip,Legend
+} from "recharts";
+
+const data = [
+  {
+    name: "Low"
+    value:  risk?.LOW || 0
+  },
+  {
+        name: "Medium",
+        value: risk?.MEDIUM || 0
+    },
+
+    {
+        name: "High",
+        value: risk?.HIGH || 0
+    }
+]
+
+
+
