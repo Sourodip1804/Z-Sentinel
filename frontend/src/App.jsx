@@ -6,6 +6,7 @@ import {
   simulateTransaction,
   predictTransaction,
 } from "./api";
+import "./App.css"
 import Header from "./components/Header";
 import StatCard from "./components/StatCard";
 import TransactionForm from "./components/TransactionForm";
