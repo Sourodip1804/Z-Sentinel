@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+backend/venv/
+.venv/
+venv/
+
+# Models and generated data
+ml/artifacts/*.joblib
+ml/data/*.csv
+!ml/artifacts/.gitkeep
+!ml/data/.gitkeep
+!ml/data/README.md
+
+# Environment
+.env
+backend/.env
+frontend/.env
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# IDEs / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local databases
+*.db
+*.sqlite

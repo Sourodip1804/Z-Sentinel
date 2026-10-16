@@ -1,27 +1,35 @@
 import {
-  ResponsiveContainer,
-  PieChart,
-  Pie,
   Cell,
-  Tooltip,
   Legend,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip,
 } from "recharts";
 
 const COLORS = {
-  Low: "#22c55e",
-  Medium: "#f59e0b",
-  High: "#ef4444",
+  LOW: "#22c55e",
+  MEDIUM: "#f59e0b",
+  HIGH: "#ef4444",
 };
 
-export default function RiskChart({ risk }) {
+export default function RiskChart({ risk, loading }) {
   const data = [
-    { name: "Low", value: risk?.LOW || 0 },
-    { name: "Medium", value: risk?.MEDIUM || 0 },
-    { name: "High", value: risk?.HIGH || 0 },
+    { name: "LOW", value: risk?.LOW || 0 },
+    { name: "MEDIUM", value: risk?.MEDIUM || 0 },
+    { name: "HIGH", value: risk?.HIGH || 0 },
   ];
+  const total = data.reduce((sum, item) => sum + item.value, 0);
+
+  if (loading) {
+    return <p className="muted">Loading risk distribution…</p>;
+  }
+  if (!total) {
+    return <p className="muted">No scored transactions yet.</p>;
+  }
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={280}>
       <PieChart>
         <Pie
           data={data}
